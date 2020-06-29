@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
-const User = mongoose.Schema('User');
+const User = mongoose.model('User');
 
 module.exports = (req, res, next) => {
     // express lowercases header field names
