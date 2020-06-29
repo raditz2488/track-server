@@ -34,7 +34,7 @@ mongoose.connection.on('error', (err) => {
     console.error('Error connecting to mongoDb', err);
 });
 
-app.get("/", (req, res) => {
+app.get("/", requiresAuth, (req, res) => {
     res.send('Hi there!!!');
 });
 
