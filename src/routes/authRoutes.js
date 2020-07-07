@@ -30,7 +30,13 @@ router.post('/signin', async (req, res) => {
 
     const user  = await User.findOne({ email });
     if (!user) {
-        res.status(404).send({ "error": "Invalid email or password." })
+        res.status(404).send({ "error": "Email not found." })
+    }
+
+    try {
+
+    } catch (err) {
+        res.status
     }
 })
 
