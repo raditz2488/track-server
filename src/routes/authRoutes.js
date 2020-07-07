@@ -34,9 +34,9 @@ router.post('/signin', async (req, res) => {
     }
 
     try {
-
+        await user.comparePassword(password)
     } catch (err) {
-        res.status
+        res.status(422).send({ error: "Invalid email or password" })
     }
 })
 
