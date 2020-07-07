@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken');
 
 const User = mongoose.model('User');
 const router = express.Router();
+const requireAuth = express("../middlewares/requireAuth");
+
+router.use = requireAuth
 
 router.post("/signup", async (req, res) => {
     const { email, password } = req.body;
