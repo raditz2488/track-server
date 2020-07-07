@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const requiresAuth = require('./middlewares/requiresAuth');
-
+const trackRoutes = require("./routes/trackRoutes");
 
 const app = express();
 app.use(bodyParser.json());
