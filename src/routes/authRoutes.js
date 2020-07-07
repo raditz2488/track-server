@@ -30,13 +30,15 @@ router.post('/signin', async (req, res) => {
 
     const user  = await User.findOne({ email });
     if (!user) {
-        res.status(404).send({ "error": "Email not found." })
+        res.status(404).send({ "error": "Email not found." });
     }
 
     try {
-        await user.comparePassword(password)
+        await user.comparePassword(password);
+        const token = jwt.sign({ id: user._id }, "MY_SECRET_KEY");
+        res.send({ token });
     } catch (err) {
-        res.status(422).send({ error: "Invalid email or password" })
+        res.status(422).send({ error: "Invalid email or password" });
     }
 })
 
