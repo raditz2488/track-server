@@ -22,4 +22,11 @@ router.post("/signup", async (req, res) => {
     
 })
 
+router.post('/signin', (req, res) => {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(422).send({ "error": "Email and password are required." });
+    }
+})
+
 module.exports = router;
