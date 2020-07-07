@@ -1,2 +1,4 @@
 const express = require('express');
-const express = require('mongoose');
+const mongoose = require('mongoose');
+
+const router = express.Router();
