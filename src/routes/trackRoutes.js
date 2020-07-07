@@ -5,3 +5,5 @@ const requiresAuth = require("../middlewares/requiresAuth");
 const trackSchema = mongoose.model("Track");
 
 const router = express.Router();
+
+router.use = requiresAuth;
