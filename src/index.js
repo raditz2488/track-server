@@ -10,6 +10,7 @@ const trackRoutes = require("./routes/trackRoutes");
 const app = express();
 app.use(bodyParser.json());
 app.use(authRoutes);
+app.use(trackRoutes);
 
 
 //2.2.12 & later
